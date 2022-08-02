@@ -1,11 +1,19 @@
 import React from 'react';
 import { Routes, Route } from "react-router-dom";
+import Home from "./components/home/Home";
+import MovieDetail from "./components/movieDetail/MovieDetail";
+import PageNotFound from "./components/pageNotFound/PageNotFound";
+import "./App.scss";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Hello CodeSandbox</h1>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movie/:movieID" element={<MovieDetail />} />
+        <Route element={<PageNotFound />} />
+      </Routes>
+    </>
   );
 }
 
